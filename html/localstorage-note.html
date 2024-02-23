@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Localstorage</title>
+</head>
+<body>
+    <script>
+        // localstorage js ile site ve uygulamaların belleklerine key/value şeklinde belli bir tarih ile sonlandırmadan kaydetmemize olanak tanır
+
+        //veri kaydetme - setitem
+        localStorage.setItem("anahtarKelime", "değer"); // web tarayıcımızın belleğinde anahtar kelime adında bir key ve değer içeriğini taşıyan bir value oluşturuldu
+
+        // veri çağırma - getitem
+        let gelenDeger = localStorage.getItem("anahtarKelime");
+        console.log(gelenDeger);
+
+        // sadece anahtarı almak - key
+        console.log(localStorage.key(0));
+
+        // istenilen kaydı silme - removeItem
+        localStorage.removeItem("anahtarKelime"); //anahtar kelimemizi girmemiz yeterli
+
+        // tüm localstorage kayıtlarını silme
+        localStorage.clear();
+
+
+    </script>
+</body>
+</html>
