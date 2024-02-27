@@ -25,6 +25,18 @@
         // tüm localstorage kayıtlarını silme
         localStorage.clear();
 
+        // dizi tarzı veri gönderip alma 
+        let localArray = [];
+        localArray[0]="yunus";
+        localArray[1]="üğdül";
+        localStorage.setItem("localArray",JSON.stringify(localArray)); //veri gönderildi
+
+        //veriyi çağırma
+        let gelenVeri = localStorage.getItem("localArray")
+        //veriyi okunur yapma ve yazdırma
+        console.log(JSON.parse(gelenVeri))
+        
+
 
     </script>
 </body>
