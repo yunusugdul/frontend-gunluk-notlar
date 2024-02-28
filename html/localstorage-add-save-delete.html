@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body class="list-item">
+    <button class="saveBtn">Kaydet</button>
+    <button class="callBtn">Getir</button>
+    <button class="deleteBtn">Sil</button>
+    <ul class="list">
+      <li >Liste öğesi </li>
+    </ul>
+    <script>
+
+
+      let uldizi = []; // localstorage eklemek için boş bir dizi tanımladım
+      let ul = document.querySelector(".list");
+      let saveBtn = document.querySelector(".saveBtn");
+      let callBtn = document.querySelector(".callBtn");
+      let deleteBtn = document.querySelector(".deleteBtn");
+      let listItem = document.querySelector(".list-item");
+
+      saveBtn.addEventListener("click", wrt);
+      callBtn.addEventListener("click", getir);
+      deleteBtn.addEventListener("click", sil);
+
+      function wrt() {
+        let li = document.createElement("li");
+        li.textContent = "Yeni öğe";
+        ul.appendChild(li);
+        localStorage.setItem("uldizi", JSON.stringify(ul.innerHTML));
+       
+      }
+
+      function getir() {
+        uldizi = localStorage.getItem("uldizi");
+        ul.innerHTML = JSON.parse(uldizi);
+      }
+
+      function sil() {
+        uldizi = [];
+        localStorage.setItem("uldizi", JSON.stringify(uldizi));
+        uldizi = localStorage.getItem("uldizi");
+        ul.innerHTML = JSON.parse(uldizi);
+      }
+
+      
+    </script>
+  </body>
+</html>
